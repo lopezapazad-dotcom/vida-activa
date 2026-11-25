@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vida Activa | Bienestar integral</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/autenticacion.css">
+</head>
+
+<body>
+    <section id="pantalla-acceso" class="pantalla-acceso">
+    <div class="acceso-presentacion">
+
+        <!-- FORMULARIO DE ACCESO -->
+        <div class="contenedor-acceso">
+
+            <div class="encabezado-acceso">
+                <span class="etiqueta-acceso">BIENESTAR INTEGRAL</span>
+                <h1>Vida Activa</h1>
+                <p>Un espacio para cuidar de ti, mejorar tus hábitos y sentirte mejor cada día.</p>
+            </div>
+
+            <div class="pestanas-acceso">
+                <button type="button" id="pestana-login" class="activa">
+                    Iniciar sesión
+                </button>
+                <button type="button" id="pestana-registro">
+                    Registrarse
+                </button>
+            </div>
+
+            <form id="form-login">
+                <h2>¡Bienvenido de nuevo!</h2>
+                <p class="descripcion-formulario">
+                    Ingresa tus datos para continuar.
+                </p>
+
+                <label for="login-correo">Correo electrónico</label>
+                <input type="email" id="login-correo"
+                       placeholder="ejemplo@correo.com" required>
+
+                <label for="login-clave">Contraseña</label>
+                <input type="password" id="login-clave"
+                       placeholder="Ingresa tu contraseña" required>
+
+                <button type="submit">Ingresar a mi cuenta</button>
+                <p id="mensaje-login"></p>
+            </form>
+
+            <form id="form-registro" hidden>
+                <h2>Crear una cuenta</h2>
+                <p class="descripcion-formulario">
+                    Comienza hoy tu camino hacia una vida más activa.
+                </p>
+
+                <label for="registro-nombre">Nombre</label>
+                <input type="text" id="registro-nombre"
+                       placeholder="Tu nombre" required>
+
+                <label for="registro-correo">Correo electrónico</label>
+                <input type="email" id="registro-correo"
+                       placeholder="ejemplo@correo.com" required>
+
+                <label for="registro-clave">Contraseña</label>
+                <input type="password" id="registro-clave"
+                       placeholder="Mínimo 6 caracteres"
+                       minlength="6" required>
+
+                <button type="submit">Crear mi cuenta</button>
+                <p id="mensaje-registro"></p>
+            </form>
+
+            <p class="pie-acceso">
+                Vida Activa © 2026 · Tu bienestar, a tu ritmo.
+            </p>
+        </div>
+
+        <!-- IMAGEN Y MENSAJE LATERAL -->
+        <div class="imagen-acceso">
+            <img src="img/foto.jpeg"
+                 alt="Persona realizando ejercicio en un ambiente natural">
+
+            <div class="texto-imagen-acceso">
+                <span>MUÉVETE · RESPIRA · DISFRUTA</span>
+                <h2>Pequeños pasos, grandes cambios.</h2>
+                <p>
+                    Descubre rutinas, fortalece tu cuerpo y construye
+                    hábitos saludables a tu propio ritmo.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    </section> <!-- cierre de la pantalla de acceso-->
+
+
+<div id="aplicacion" hidden>
+    <header>
+        <h1>Vida Activa</h1>
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#rutinas">Rutinas</a>
+    <a href="#bienestar">Bienestar</a>
+
+    <button type="button" id="boton-modo-facil"
+            aria-pressed="false">
+        Modo fácil: desactivado
+    </button>
+</nav>
+        <div class="usuario-activo">
+    <span id="nombre-usuario"></span>
+    <button id="boton-cerrar-sesion">Cerrar sesión</button>
+</div>
+    </header>
+
+    <main>
+
+        <section id="inicio">
+            <h2>¡Bienvenido a Vida Activa!</h2>
+            <p>
+                Cuida de ti, un día a la vez.
+                Encuentra rutinas y desarrolla hábitos saludables.
+            </p>
+            <a href="#rutinas" class="boton-explorar">Explorar rutinas</a>
+            
+        </section>
+<!-- IDENTIFICACION DEL USUARIO -->
+<section id="perfil-usuario" class="perfil-usuario">
+    <h2>Conozcamos un poco sobre ti</h2>
+    <p>Indica tu edad para adaptar las recomendaciones de Vida Activa.</p>
+
+    <label for="edad-usuario">¿Cuántos años tienes?</label>
+    <input
+        type="number"
+        id="edad-usuario"
+        min="13"
+        max="110"
+        placeholder="Escribe tu edad"
+    >
+
+    <button id="registrar-edad">Continuar</button>
+
+    <p id="mensaje-edad"></p>
+    <p id="grupo-edad"></p>
+</section>
+      <section id="bienestar" class="bienestar-diario">
+
+    <h2>Tu bienestar diario</h2>
+    <p>Registra tus hábitos y consulta tu progreso diario.</p>
+
+    <div class="bienestar-tarjetas">
+
+        <article class="tarjeta-habito">
+            <span class="icono">💧</span>
+            <h3>Consumo de agua</h3>
+
+            <p>
+                <strong id="contador-agua">0</strong>
+                de 8 vasos
+            </p>
+
+            <div class="barra-hidratacion">
+                <div id="progreso-agua"></div>
+            </div>
+
+            <div class="controles-agua">
+                <button type="button" id="restar-agua">
+                    − Quitar vaso
+                </button>
+
+                <button type="button" id="agregar-agua">
+                    + Añadir vaso
+                </button>
+            </div>
+
+            <p id="mensaje-agua" role="status">
+                ¡Comienza registrando tu hidratación!
+            </p>
+        </article>
+
+    </div>
+
+</section>
+         <!-- PANEL DE CONTROL -->
+<section id="panel" class="panel">
+    <h2>Tu resumen de bienestar</h2>
+    <p>Este es tu progreso de hoy.</p>
+    <div class="aviso-demostracion" role="note">
+    <strong>Nota:</strong>
+    cuide su salud paso a paso un dia a la vez que tenga un lindo dia, tarde o noche
+</div>
+    <!-- TARJETAS DE METRICAS -->
+    <div class="metricas">
+
+
+      <div class="tarjeta-metrica">
+    <span class="icono">🏃</span>
+    <h3>Minutos activos</h3>
+    <p class="valor">
+        <span id="minutos-activos">0</span> min
+    </p>
+</div>
+
+        <div class="tarjeta-metrica">
+    <span class="icono">💧</span>
+    <h3>Vasos de agua</h3>
+    <p class="valor">
+        <span id="resumen-agua">0</span> de 8 vasos
+    </p>
+</div>
+    </div>
+
+   <!-- ANILLOS DE PROGRESO -->
+<h3>Objetivos diarios</h3>
+
+<div class="progresos">
+
+    <div class="progreso">
+        <div class="anillo anillo-1" id="anillo-actividad">
+            <span id="porcentaje-actividad">0%</span>
+        </div>
+        <p>Actividad física</p>
+    </div>
+
+    <div class="progreso">
+        <div class="anillo anillo-2" id="anillo-hidratacion">
+            <span id="porcentaje-agua">0%</span>
+        </div>
+        <p>Hidratación</p>
+    </div>
+
+
+
+
+    </div>
+
+    <!-- ACTIVIDAD SEMANAL -->
+    <h3>Actividad de la semana</h3>
+
+   <div class="grafico">
+    <button class="barra" data-dia="Lunes" data-minutos="20">
+        <span style="height: 40%"></span>
+        <p>Lun</p>
+    </button>
+
+    <button class="barra" data-dia="Martes" data-minutos="35">
+        <span style="height: 70%"></span>
+        <p>Mar</p>
+    </button>
+
+    <button class="barra" data-dia="Miércoles" data-minutos="28">
+        <span style="height: 55%"></span>
+        <p>Mié</p>
+    </button>
+
+    <button class="barra" data-dia="Jueves" data-minutos="45">
+        <span style="height: 90%"></span>
+        <p>Jue</p>
+    </button>
+
+    <button class="barra" data-dia="Viernes" data-minutos="30">
+        <span style="height: 60%"></span>
+        <p>Vie</p>
+    </button>
+
+    <button class="barra" data-dia="Sábado" data-minutos="18">
+        <span style="height: 35%"></span>
+        <p>Sáb</p>
+    </button>
+
+    <button class="barra" data-dia="Domingo" data-minutos="10">
+        <span style="height: 20%"></span>
+        <p>Dom</p>
+    </button>
+</div>
+
+<p id="detalle-grafico">Selecciona un día para ver tu actividad.</p>
+<!-- HISTORIAL DE ACTIVIDAD -->
+<section id="historial-actividad" class="historial-actividad">
+    <h3>Historial de actividad</h3>
+    <p>Consulta los minutos de ejercicio que has registrado.</p>
+
+    <div id="lista-historial">
+        <p>Aún no hay actividades registradas.</p>
+    </div>
+</section>
+</section>
+
+       <!-- EXPLORADOR DE RUTINAS -->
+<section id="rutinas" class="explorador">
+
+    <h2>Explora nuestras rutinas</h2>
+    <p>Encuentra una actividad adecuada para ti.</p>
+
+    <!-- BUSCADOR -->
+    <input
+        type="text"
+        id="buscador"
+        placeholder="Buscar una rutina..."
+    >
+
+    <!-- FILTROS POR NIVEL -->
+    <h3>Nivel de dificultad</h3>
+
+    <div class="filtros">
+        <button class="filtro activo" data-nivel="todos">Todos</button>
+        <button class="filtro" data-nivel="Principiante">Principiante</button>
+        <button class="filtro" data-nivel="Intermedio">Intermedio</button>
+        <button class="filtro" data-nivel="Avanzado">Avanzado</button>
+    </div>
+
+    <!-- FILTROS POR DURACION -->
+    <h3>Duración</h3>
+
+    <div class="filtros">
+        <button class="duracion activo" data-duracion="todos">Todas</button>
+        <button class="duracion" data-duracion="15">15 min</button>
+        <button class="duracion" data-duracion="30">30 min</button>
+        <button class="duracion" data-duracion="45">+45 min</button>
+    </div>
+
+    <!-- TARJETAS DE RUTINAS -->
+ <div class="rutinas-grid" id="lista-rutinas">
+
+    <div class="rutina-card" data-nivel="Principiante" data-duracion="15" data-edad="adolescentes">
+        <img src="img/juvenil.png" alt="Joven haciendo ejercicio">
+        <div class="contenido-rutina">
+            <span class="dificultad">⭐ Principiante</span>
+            <h3>Movimiento juvenil</h3>
+            <p>⏱ 15 minutos</p>
+            <button>Ver rutina</button>
+        </div>
+    </div>
+
+    <div class="rutina-card" data-nivel="Principiante" data-duracion="15" data-edad="adultos-mayores">
+        <img src="img/equilibrio.png" alt="Adulto mayor haciendo ejercicio">
+        <div class="contenido-rutina">
+            <span class="dificultad">⭐ Principiante</span>
+            <h3>Movilidad y equilibrio</h3>
+            <p>⏱ 15 minutos</p>
+            <button>Ver rutina</button>
+        </div>
+    </div>
+
+    <div class="rutina-card" data-nivel="Principiante" data-duracion="15" data-edad="todos">
+        <img src="img/movilidad.png" alt="Persona realizando ejercicios de movilidad">
+        <div class="contenido-rutina">
+            <span class="dificultad">⭐ Principiante</span>
+            <h3>Movilidad suave</h3>
+            <p>⏱ 15 minutos</p>
+            <button>Ver rutina</button>
+        </div>
+    </div>
+
+    <div class="rutina-card" data-nivel="Principiante" data-duracion="30" data-edad="todos">
+        <img src="img/caminata.png" alt="Persona caminando">
+        <div class="contenido-rutina">
+            <span class="dificultad">⭐ Principiante</span>
+            <h3>Caminata activa</h3>
+            <p>⏱ 30 minutos</p>
+            <button>Ver rutina</button>
+        </div>
+    </div>
+
+    <div class="rutina-card" data-nivel="Intermedio" data-duracion="30" data-edad="adultos">
+        <img src="img/fuerza.png" alt="Personas haciendo ejercicios de fuerza">
+        <div class="contenido-rutina">
+            <span class="dificultad">🔥 Intermedio</span>
+            <h3>Fuerza básica</h3>
+            <p>⏱ 30 minutos</p>
+            <button>Ver rutina</button>
+        </div>
+    </div>
+
+    <div class="rutina-card" data-nivel="Avanzado" data-duracion="50" data-edad="adultos">
+        <img src="img/entrenamiento.png" alt="Personas realizando entrenamiento">
+        <div class="contenido-rutina">
+            <span class="dificultad">🔥 Avanzado</span>
+            <h3>Entrenamiento intenso</h3>
+            <p>⏱ 50 minutos</p>
+            <button>Ver rutina</button>
+        </div>
+    </div>
+
+</div>
+    <p id="sin-resultados" hidden>
+        No se encontraron rutinas.
+    </p>
+
+</section>
+<!-- REPRODUCTOR DE RUTINA ACTIVA -->
+<section id="reproductor" class="reproductor">
+    <h2>Rutina activa</h2>
+    <p class="nombre-ejercicio">Movilidad suave</p>
+
+    <div class="temporizador" id="temporizador">
+        00:30
+    </div>
+
+    <p id="estado-rutina">¡Prepárate para comenzar!</p>
+
+    <div class="progreso-rutina">
+        <div id="barra-progreso"></div>
+    </div>
+
+    <div class="controles-rutina">
+        <button id="iniciar">▶ Iniciar</button>
+        <button id="pausar" disabled>⏸ Pausar</button>
+        <button id="siguiente">⏭ Siguiente</button>
+    </div>
+</section>
+       
+
+    </main>
+
+    <footer>
+        <p>Vida Activa © 2026 - Bienestar a tu ritmo</p>
+    </footer>
+</div>
+ <script src="js/almacenamiento.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/autenticacion.js"></script>
+   
+
+</body>
+</html>

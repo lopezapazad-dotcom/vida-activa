@@ -1,0 +1,408 @@
+/* ==========================================
+   VIDA ACTIVA | ACCESO Y REGISTRO
+========================================== */
+
+.pantalla-acceso {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 18px;
+    background:
+        radial-gradient(ellipse at 10% 10%, #e0ecdf 0, transparent 35%),
+        radial-gradient(ellipse at 90% 90%, #e8eadb 0, transparent 35%),
+        #f7f7f1;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* TARJETA */
+
+.contenedor-acceso {
+    width: 100%;
+    max-width: 455px;
+    padding: 43px 40px;
+    background: #ffffff;
+    border: 1px solid #e6ece3;
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(43,70,51,0.11);
+    animation: entrada 0.55s ease;
+}
+
+@keyframes entrada {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* IDENTIDAD */
+
+.contenedor-acceso h1 {
+    margin: 0;
+    color: #385b47;
+    text-align: center;
+    font-size: 37px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.contenedor-acceso > p {
+    margin: 8px 0 28px;
+    color: #819087;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* PESTAÑAS */
+
+.pestanas-acceso {
+    display: flex;
+    gap: 7px;
+    padding: 5px;
+    margin-bottom: 27px;
+    background: #f0f4ee;
+    border-radius: 13px;
+}
+
+.pestanas-acceso button {
+    flex: 1;
+    min-height: 43px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: #7c8a80;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.pestanas-acceso button:hover {
+    background: #e5ece3;
+}
+
+.pestanas-acceso button.activa {
+    background: white;
+    color: #385b47;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+}
+
+/* FORMULARIOS */
+
+.contenedor-acceso form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contenedor-acceso form h2 {
+    margin: 0 0 5px;
+    color: #293f31;
+    font-size: 21px;
+    text-align: left;
+}
+
+.contenedor-acceso label {
+    margin-bottom: -8px;
+    color: #43594a;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.contenedor-acceso input {
+    width: 100%;
+    min-height: 48px;
+    padding: 13px 15px;
+    border: 1px solid #e1e8df;
+    border-radius: 11px;
+    background: #fafbf9;
+    color: #293b30;
+    font-size: 14px;
+    transition: 0.25s ease;
+}
+
+.contenedor-acceso input:focus {
+    border-color: #668b72;
+    outline: none;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(102,139,114,0.12);
+}
+
+/* BOTÓN */
+
+.contenedor-acceso form button {
+    min-height: 49px;
+    margin-top: 9px;
+    padding: 13px;
+    border: none;
+    border-radius: 11px;
+    background: #668b72;
+    color: white;
+    font-size: 15px;
+    font-weight: 750;
+    box-shadow: 0 5px 13px rgba(63,102,80,0.13);
+}
+
+.contenedor-acceso form button:hover {
+    background: #385b47;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 17px rgba(63,102,80,0.19);
+}
+
+/* MENSAJES */
+
+#mensaje-login,
+#mensaje-registro {
+    min-height: 18px;
+    margin: 0;
+    color: #385b47;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 480px) {
+    .pantalla-acceso {
+        padding: 20px 14px;
+    }
+
+    .contenedor-acceso {
+        padding: 34px 23px;
+        border-radius: 21px;
+    }
+
+    .contenedor-acceso h1 {
+        font-size: 32px;
+    }
+}
+
+/* OCULTAR ELEMENTOS */
+
+[hidden] {
+    display: none !important;
+}
+
+/* ==================================
+   NUEVA PRESENTACIÓN DE ACCESO
+================================== */
+
+.pantalla-acceso {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 45px 20px;
+}
+
+.acceso-presentacion {
+    width: 100%;
+    max-width: 1050px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 18px 55px rgba(40, 75, 55, 0.13);
+}
+
+.contenedor-acceso {
+    width: 100%;
+    max-width: none;
+    padding: 48px 42px;
+    background: #ffffff;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.encabezado-acceso {
+    margin-bottom: 28px;
+}
+
+.etiqueta-acceso {
+    display: inline-block;
+    color: #64866c;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.encabezado-acceso h1 {
+    color: #315c42;
+    font-size: 34px;
+    margin: 0 0 10px;
+}
+
+.encabezado-acceso p,
+.descripcion-formulario {
+    color: #77847b;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.pestanas-acceso {
+    display: flex;
+    gap: 8px;
+    padding: 5px;
+    background: #f0f4ef;
+    border-radius: 12px;
+    margin-bottom: 28px;
+}
+
+.pestanas-acceso button {
+    flex: 1;
+    border: none;
+    padding: 12px 8px;
+    border-radius: 9px;
+    background: transparent;
+    color: #637467;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.pestanas-acceso button.activa {
+    background: #ffffff;
+    color: #376747;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.contenedor-acceso form h2 {
+    color: #315c42;
+    margin-bottom: 5px;
+    font-size: 23px;
+}
+
+.contenedor-acceso form label {
+    display: block;
+    margin: 17px 0 7px;
+    color: #46584b;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.contenedor-acceso form input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 14px;
+    border: 1px solid #dce5dc;
+    border-radius: 10px;
+    background: #fafcf9;
+    outline: none;
+}
+
+.contenedor-acceso form input:focus {
+    border-color: #729b79;
+    box-shadow: 0 0 0 3px rgba(114,155,121,0.13);
+}
+
+.contenedor-acceso form button[type="submit"] {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #477c58;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.contenedor-acceso form button[type="submit"]:hover {
+    background: #356747;
+    transform: translateY(-2px);
+}
+
+.pie-acceso {
+    margin-top: 28px;
+    color: #9aa59c;
+    font-size: 11px;
+    text-align: center;
+}
+
+.imagen-acceso {
+    position: relative;
+    min-height: 570px;
+    overflow: hidden;
+    background: #dce9dc;
+}
+
+.imagen-acceso img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+}
+
+.imagen-acceso::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(20, 48, 31, 0.85),
+        rgba(20, 48, 31, 0.05) 75%
+    );
+}
+
+.texto-imagen-acceso {
+    position: absolute;
+    z-index: 1;
+    bottom: 42px;
+    left: 35px;
+    right: 35px;
+    color: white;
+}
+
+.texto-imagen-acceso span {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.texto-imagen-acceso h2 {
+    font-size: 29px;
+    line-height: 1.2;
+    margin: 13px 0;
+}
+
+.texto-imagen-acceso p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #edf4ed;
+}
+
+@media (max-width: 760px) {
+    .pantalla-acceso {
+        padding: 20px 12px;
+    }
+
+    .acceso-presentacion {
+        grid-template-columns: 1fr;
+        max-width: 460px;
+    }
+
+    .contenedor-acceso {
+        padding: 32px 25px;
+    }
+
+    .imagen-acceso {
+        min-height: 270px;
+    }
+
+    .texto-imagen-acceso {
+        bottom: 22px;
+        left: 24px;
+        right: 24px;
+    }
+
+    .texto-imagen-acceso h2 {
+        font-size: 23px;
+    }
+}
